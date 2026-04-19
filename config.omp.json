@@ -1,0 +1,112 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "version": 4,
+  "final_space": true,
+  "blocks": [
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "type": "session",
+          "style": "powerline",
+          "powerline_symbol": "\ue0b0",
+          "template": " \uf007 {{ .UserName }}",
+          "foreground": "#000000",
+          "background": "#93e1e6"
+        },
+        {
+          "type": "shell",
+          "style": "powerline",
+          "powerline_symbol": "\ue0b0",
+          "template": " \ue795 {{ .Name }} ",
+          "foreground": "p:text-light",
+          "background": "#000000"
+        },
+        {
+          "type": "path",
+          "style": "powerline",
+          "powerline_symbol": "\ue0b0",
+          "foreground": "p:text-light",
+          "background": "#192d3e",
+          "template": " \uf07c {{ .Path }} ",
+          "options": {
+            "style": "folder"
+          }
+        },
+        {
+          "type": "git",
+          "style": "accordion",
+          "powerline_symbol": "\ue0b0",
+          "foreground": "p:text-light",
+          "background": "#497d97",
+          "template": " \uf126 {{ .HEAD }}{{ if .BranchStatus }} {{ .BranchStatus }}{{ end }} "
+        },
+        {
+          "type": "gitversion",
+          "style": "plain",
+          "powerline_symbol": "\ue0b0",
+          "template": " \uf412 {{ .Major }}.{{ .Minor }}.{{ .Patch }} ",
+          "foreground": "#fafafa",
+          "background": "#7e3e76"
+        },
+        {
+          "type": "time",
+          "style": "powerline",
+          "powerline_symbol": "\ue0b0",
+          "template": " \uf017 {{ .CurrentDate | date .Format }} ",
+          "foreground": "p:text-light",
+          "background": "#000000"
+        },
+        {
+          "type": "status",
+          "style": "plain",
+          "powerline_symbol": "\ue0b0",
+          "template": " {{ if eq .Code 0 }}\uf00c{{ else }}\uf071 {{ .Code }}{{ end }} ",
+          "foreground": "#c2c86a",
+          "background": "#000000"
+        }
+      ],
+      "newline": false
+    },
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "type": "python",
+          "style": "powerline",
+          "powerline_symbol": "\ue0b0",
+          "template": " \ue235 {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }} ",
+          "cache": {
+            "duration": "168h",
+            "strategy": "folder"
+          },
+          "foreground": "p:text-light",
+          "background": "#3d4b34"
+        },
+        {
+          "type": "node",
+          "style": "powerline",
+          "powerline_symbol": "\ue0b0",
+          "template": " \ue718 {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }} ",
+          "foreground": "p:text-light",
+          "background": "#3d4b34"
+        },
+        {
+          "type": "executiontime",
+          "style": "plain",
+          "powerline_symbol": "\ue0b0",
+          "template": " \uf252 {{ .FormattedMs }} ",
+          "foreground": "p:text-light",
+          "background": "#000000"
+        }
+      ]
+    }
+  ],
+  "palette": {
+    "text-light": "#ffffff",
+    "path-bg": "#61AFEF",
+    "git-bg": "#98C379"
+  }
+}
