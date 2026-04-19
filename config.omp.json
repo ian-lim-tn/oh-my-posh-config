@@ -6,6 +6,7 @@
     {
       "type": "prompt",
       "alignment": "left",
+      "newline": true,
       "segments": [
         {
           "type": "session",
@@ -43,14 +44,6 @@
           "template": " \uf126 {{ .HEAD }}{{ if .BranchStatus }} {{ .BranchStatus }}{{ end }} "
         },
         {
-          "type": "gitversion",
-          "style": "plain",
-          "powerline_symbol": "\ue0b0",
-          "template": " \uf412 {{ .Major }}.{{ .Minor }}.{{ .Patch }} ",
-          "foreground": "#fafafa",
-          "background": "#7e3e76"
-        },
-        {
           "type": "time",
           "style": "powerline",
           "powerline_symbol": "\ue0b0",
@@ -66,8 +59,7 @@
           "foreground": "#c2c86a",
           "background": "#000000"
         }
-      ],
-      "newline": false
+      ]
     },
     {
       "type": "prompt",
@@ -100,6 +92,19 @@
           "template": " \uf252 {{ .FormattedMs }} ",
           "foreground": "p:text-light",
           "background": "#000000"
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "type": "text",
+          "style": "plain",
+          "foreground": "#ffffff",
+          "template": "\u276f" 
         }
       ]
     }
